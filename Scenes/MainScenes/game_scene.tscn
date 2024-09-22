@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://brd35o7s1yq7r"]
+
+[ext_resource type="Script" path="res://Scenes/MainScenes/game_scene.gd" id="1_bc280"]
+[ext_resource type="PackedScene" uid="uid://fhl2us6mhvum" path="res://Scenes/Maps/map_1.tscn" id="2_ffusg"]
+[ext_resource type="PackedScene" uid="uid://2phyf7femeqh" path="res://Scenes/SupportScenes/loop_start.tscn" id="3_lh1yl"]
+[ext_resource type="Script" path="res://addons/grid_display/grid_display.gd" id="4_t28o5"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_bc280")
+
+[node name="Grid Display" type="Node2D" parent="."]
+visible = false
+script = ExtResource("4_t28o5")
+grid_size = Vector2(20, 11)
+
+[node name="Map1" parent="." instance=ExtResource("2_ffusg")]
+
+[node name="LoopStart" parent="." instance=ExtResource("3_lh1yl")]
+position = Vector2(608, 95)
+
+[editable path="Map1"]
